@@ -6,7 +6,15 @@ module.exports = {
   ],
   daisyui: {
     themes: [
-      "dracula",
+      {
+        mytheme: {
+          primary: "#06113C",
+          secondary: "#FF8C32",
+          accent: "#37cdbe",
+          neutral: "#DDDDDD",
+          "base-100": "#FFFFED",
+        },
+      },
     ],
   },
   plugins: [require('daisyui')],
