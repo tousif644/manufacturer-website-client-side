@@ -1,10 +1,19 @@
-
 import { React } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Home from './Pages/Home/Home';
+import Intro from './Pages/Intro/Intro';
+import Footer from './Pages/Shared/Footer';
+import Header from './Pages/Shared/Header';
 function App() {
 
   return (
-    <div className="App flex justify-center my-24">
-      <h1 className='text-secondary text-5xl font-[Poppins] hover:backdrop-saturate-200'>Helooooooooooo tHrereeeee</h1>
+    <div>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Intro></Intro>}></Route>
+        <Route path='/home' element={<Home></Home>}></Route>
+      </Routes>
+      <Footer></Footer>
     </div>
   )
 }
