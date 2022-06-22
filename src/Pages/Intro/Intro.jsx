@@ -1,10 +1,21 @@
 import React from 'react';
-import {Link} from "react-router-dom" 
+import { Link } from "react-router-dom"
+import {Bounce, LightSpeed} from 'react-reveal';
 const Intro = () => {
     return (
         <div>
-            <h1 className='text-5xl'>Hello There this is an Intro Page</h1>
-            <Link to="/home" className='text-3xl '> Home ➡</Link>
+            <div class=" flex flex-col h-screen justify-center items-center">
+                <Bounce left cascade>
+                    <div className="text-7xl p-2">Welcome to EQUIPO</div>
+                </Bounce>
+                <div className="text-3xl p-2">
+                    <Bounce left cascasde   >
+                        <Link to="/home" className='btn btn-secondary text-white'>Click me to forward</Link>
+
+                    </Bounce>
+                </div>
+            </div>
+
         </div>
     );
 };
