@@ -9,7 +9,7 @@ const Intro = () => {
                     <div className="text-7xl p-2">Welcome to EQUIPO</div>
                 </Bounce>
                 <div className="text-3xl p-2">
-                    <Bounce left cascasde   >
+                    <Bounce left>
                         <Link to="/home" className='btn btn-secondary text-white'>Click me to forward</Link>
 
                     </Bounce>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     return (
         <div className=''>
-            <div class="navbar bg-primary text-white lg:px-12">
+            <div class="navbar bg-primary text-white  px-14">
                 <div class="navbar-start">
                     <div class="dropdown">
                         <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -31,11 +31,11 @@ const Header = () => {
                             </p>
                         </ul>
                     </div>
-                    <a class="btn btn-ghost normal-case text-3xl">EQUIPO</a>
+                    <Link to="/" class="btn btn-ghost normal-case text-3xl">EQUIPO</Link>
                 </div>
                 <div class="navbar-end hidden lg:flex mx-0">
                     <ul class="menu menu-horizontal p-0">
-                        <li><Link to="">Home</Link></li>
+                        <li><Link to="/home">Home</Link></li>
                         <li tabindex="0">
                             <Link to=''>
                                 Our Tools
@@ -47,13 +47,15 @@ const Header = () => {
                                 <li><Link to=''>Pressure Washer</Link></li>
                             </ul>
                         </li>
-                        <li><Link to="">Item 3</Link></li>
+                        <li><Link to="">Blogs</Link></li>
+                        <li><Link to="/portfolio">Portfolio</Link></li>
+                        <li><Link to="">Dashboard</Link></li>
                     </ul>
                     <Link to="" class="btn btn-secondary ">Log in</Link>
-                    <p className="text-neutral font-bold pl-3" style={{ fontSize: "1px" }}>Customer Service
+                    {/* <p className="text-neutral font-bold pl-3" style={{ fontSize: "1px" }}>Customer Service
                         <br />
                         (+880 01923456787)
-                    </p>
+                    </p> */}
                 </div>
 
                 <div className='lg:hidden navbar-end'>
