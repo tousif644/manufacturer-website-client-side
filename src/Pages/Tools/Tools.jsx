@@ -16,7 +16,7 @@ const Tools = () => {
             <h1 className='text-center text-4xl font-bold underline'>Featured Tools</h1>
             <p className='text-center text-xl font-medium my-3 text-secondary'>Super fresh condition</p>
 
-            <div className='items-center grid grid-cols-3 gap-4 p-12'>
+            <div className='items-center grid lg:grid-cols-3 gap-4 p-12'>
                 {
                     threeProducts.map(tool => <Tool key={tool._id} tools={tool}></Tool>)
                 }
