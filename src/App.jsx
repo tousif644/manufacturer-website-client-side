@@ -5,6 +5,7 @@ import Intro from './Pages/Intro/Intro';
 import Portfolio from './Pages/Portfolio/Portfolio';
 import Footer from './Pages/Shared/Footer';
 import Header from './Pages/Shared/Header';
+import AllTools from './Pages/Tools/AllTools';
 function App() {
 
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path='/' element={<Intro></Intro>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
+        <Route path='/allTools' element={<AllTools></AllTools>}></Route>
       </Routes>
       <Footer></Footer>
     </div>

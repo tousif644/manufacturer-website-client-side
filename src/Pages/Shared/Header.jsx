@@ -37,15 +37,9 @@ const Header = () => {
                     <ul class="menu menu-horizontal p-0">
                         <li><Link to="/home">Home</Link></li>
                         <li tabindex="0">
-                            <Link to=''>
+                            <Link to='/allTools'>
                                 Our Tools
-                                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                             </Link>
-                            <ul class="p-2 bg-primary">
-                                <li><Link to="">Hand Tools</Link></li>
-                                <li><Link to=''>Power Tools</Link></li>
-                                <li><Link to=''>Pressure Washer</Link></li>
-                            </ul>
                         </li>
                         <li><Link to="">Blogs</Link></li>
                         <li><Link to="/portfolio">Portfolio</Link></li>

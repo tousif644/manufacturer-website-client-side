@@ -1,110 +1,56 @@
 [
   {
     "_id": 1,
-    "balance": "$316.87",
-    "picture": "http://placehold.it/32x32",
-    "name": "Addie Fuller"
+    "price": 316.87,
+    "name": "DEWALT DW680 PLANER 600W",
+    "image" : "https://i.ibb.co/Hh1L4rj/product-1-removebg-preview.png"
   },
   {
     "_id": 2,
-    "balance": "$204.58",
-    "picture": "http://placehold.it/32x32",
-    "name": "Helena Pennington"
+    "price": 204.58,
+    "name": "DeWalt Dw351 230V 850W Circular Saw",
+    "image" : "https://i.ibb.co/tmxqwkP/product-2-removebg-preview.png"
   },
   {
     "_id": 3,
-    "balance": "$196.76",
-    "picture": "http://placehold.it/32x32",
-    "name": "Maritza Stanley"
+    "price": "$196.76",
+    "name": "Dewalt 3 Mode SDS-Plus Rotary Hammer",
+    "image" : "https://i.ibb.co/cyn7QMH/product-4-removebg-preview.png"
   },
   {
     "_id": 4,
-    "balance": "$149.59",
-    "picture": "http://placehold.it/32x32",
-    "name": "Rivers Hendricks"
+    "price": 149.59,
+    "name": "Bench drill 350w POWX153",
+    "image" : "https://i.ibb.co/TbmmrzQ/product-6-removebg-preview.png"
   },
   {
     "_id": 5,
-    "balance": "$207.64",
-    "picture": "http://placehold.it/32x32",
-    "name": "Elaine Mcfadden"
+    "price": 207.64,
+    "name": "ABAC PRO B6000 270 FT7.5",
+    "image" : "https://i.ibb.co/0Q1JmZf/product-14-removebg-preview.png"
   },
   {
     "_id": 6,
-    "balance": "$166.83",
-    "picture": "http://placehold.it/32x32",
-    "name": "Chan Carver"
+    "price": 166.83,
+    "name": "Dewalt DCD700 12V Cordless Drill",
+    "image" : "https://i.ibb.co/1d92Cx2/product-16-removebg-preview.png"
   },
   {
     "_id": 8,
-    "balance": "$161.44",
-    "picture": "http://placehold.it/32x32",
-    "name": "Harper Serrano"
+    "price": 161.44,
+    "name": "10L QUIET ROLL CAGE COMPRESSOR",
+    "image" : "https://i.ibb.co/RgQkrSq/DPC10-QTC-1-removebg-preview-1.png"
   },
   {
     "_id": 9,
-    "balance": "$278.92",
-    "picture": "http://placehold.it/32x32",
-    "name": "Adrian Mays"
+    "price": 278.92,
+    "name": "18V XR BRUSHLESS 30CM CHAINSAW",
+    "image" : "https://i.ibb.co/Cz44yhF/DCM565-N-1-removebg-preview-1.png"
   },
   {
     "_id": 10,
-    "balance": "$103.79",
-    "picture": "http://placehold.it/32x32",
-    "name": "Zimmerman Melton"
-  },
-  {
-    "_id": 11,
-    "balance": "$269.33",
-    "picture": "http://placehold.it/32x32",
-    "name": "Delores Terry"
-  },
-  {
-    "_id": 12,
-    "balance": "$374.29",
-    "picture": "http://placehold.it/32x32",
-    "name": "Alexandra Hall"
-  },
-  {
-    "_id": 13,
-    "balance": "$339.48",
-    "picture": "http://placehold.it/32x32",
-    "name": "Jamie Summers"
-  },
-  {
-    "_id": 14,
-    "balance": "$381.24",
-    "picture": "http://placehold.it/32x32",
-    "name": "Kimberly Stokes"
-  },
-  {
-    "_id": 16,
-    "balance": "$372.18",
-    "picture": "http://placehold.it/32x32",
-    "name": "Marguerite Cook"
-  },
-  {
-    "_id": 17,
-    "balance": "$238.21",
-    "picture": "http://placehold.it/32x32",
-    "name": "Harrington Sutton"
-  },
-  {
-    "_id": 18,
-    "balance": "$127.75",
-    "picture": "http://placehold.it/32x32",
-    "name": "Barron Mcguire"
-  },
-  {
-    "_id": 19,
-    "balance": "$318.56",
-    "picture": "http://placehold.it/32x32",
-    "name": "Barrera Swanson"
-  },
-  {
-    "_id": 20,
-    "balance": "$318.56",
-    "picture": "http://placehold.it/32x32",
-    "name": "Barrera Swanson"
+    "price": 103.79,
+    "name": "DEWALT TSTAK IP54 TOWER",
+    "image" : "https://i.ibb.co/NC4dPYB/DWST83412-1-1-removebg-preview-1.png"
   }
 ]
