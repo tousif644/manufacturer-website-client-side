@@ -45,7 +45,7 @@ const Header = () => {
                         <li><Link to="/portfolio">Portfolio</Link></li>
                         <li><Link to="">Dashboard</Link></li>
                     </ul>
-                    <Link to="" class="btn btn-secondary ">Log in</Link>
+                    <Link to="/login" class="btn btn-secondary ">Log in</Link>
                     {/* <p className="text-neutral font-bold pl-3" style={{ fontSize: "1px" }}>Customer Service
                         <br />
                         (+880 01923456787)

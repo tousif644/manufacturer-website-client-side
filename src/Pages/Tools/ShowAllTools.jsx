@@ -11,7 +11,7 @@ const ShowAllTools = ({ tools }) => {
                         {name}
                         <div class="badge badge-secondary text-white">NEW</div>
                     </h2>
-                    <p className=''>Price : <span className='text-secondary font-bold'>{price}</span></p>
+                    <p className=''>Price : <span className='text-secondary font-bold'>${price}</span></p>
                     <div class="card-actions">
                         <div class="badge badge-outline bg-primary text-white">Power tools</div>
                         <div class="badge badge-outline bg-secondary text-white">Unique Products</div>
