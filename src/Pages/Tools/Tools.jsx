@@ -8,7 +8,7 @@ const Tools = () => {
     const [tools, setTools] = useState([]);
 
     useEffect(() => {
-        fetch('data.json').then(res => res.json()).then(data => setTools(data))
+        fetch('http://localhost:5000/tools').then(res => res.json()).then(data => setTools(data))
     }, [])
     const threeProducts = tools.slice(0, 3);
     return (

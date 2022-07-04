@@ -1,56 +1,47 @@
 [
   {
-    "_id": 1,
     "price": 316.87,
     "name": "DEWALT DW680 PLANER 600W",
-    "image" : "https://i.ibb.co/Hh1L4rj/product-1-removebg-preview.png"
+    "image": "https://i.ibb.co/Hh1L4rj/product-1-removebg-preview.png"
   },
   {
-    "_id": 2,
     "price": 204.58,
     "name": "DeWalt Dw351 230V 850W Circular Saw",
-    "image" : "https://i.ibb.co/tmxqwkP/product-2-removebg-preview.png"
+    "image": "https://i.ibb.co/tmxqwkP/product-2-removebg-preview.png"
   },
   {
-    "_id": 3,
     "price": "$196.76",
     "name": "Dewalt 3 Mode SDS-Plus Rotary Hammer",
-    "image" : "https://i.ibb.co/cyn7QMH/product-4-removebg-preview.png"
+    "image": "https://i.ibb.co/cyn7QMH/product-4-removebg-preview.png"
   },
   {
-    "_id": 4,
     "price": 149.59,
     "name": "Bench drill 350w POWX153",
-    "image" : "https://i.ibb.co/TbmmrzQ/product-6-removebg-preview.png"
+    "image": "https://i.ibb.co/TbmmrzQ/product-6-removebg-preview.png"
   },
   {
-    "_id": 5,
     "price": 207.64,
     "name": "ABAC PRO B6000 270 FT7.5",
-    "image" : "https://i.ibb.co/0Q1JmZf/product-14-removebg-preview.png"
+    "image": "https://i.ibb.co/0Q1JmZf/product-14-removebg-preview.png"
   },
   {
-    "_id": 6,
     "price": 166.83,
     "name": "Dewalt DCD700 12V Cordless Drill",
-    "image" : "https://i.ibb.co/1d92Cx2/product-16-removebg-preview.png"
+    "image": "https://i.ibb.co/1d92Cx2/product-16-removebg-preview.png"
   },
   {
-    "_id": 8,
     "price": 161.44,
     "name": "10L QUIET ROLL CAGE COMPRESSOR",
-    "image" : "https://i.ibb.co/RgQkrSq/DPC10-QTC-1-removebg-preview-1.png"
+    "image": "https://i.ibb.co/RgQkrSq/DPC10-QTC-1-removebg-preview-1.png"
   },
   {
-    "_id": 9,
     "price": 278.92,
     "name": "18V XR BRUSHLESS 30CM CHAINSAW",
-    "image" : "https://i.ibb.co/Cz44yhF/DCM565-N-1-removebg-preview-1.png"
+    "image": "https://i.ibb.co/Cz44yhF/DCM565-N-1-removebg-preview-1.png"
   },
   {
-    "_id": 10,
     "price": 103.79,
     "name": "DEWALT TSTAK IP54 TOWER",
-    "image" : "https://i.ibb.co/NC4dPYB/DWST83412-1-1-removebg-preview-1.png"
+    "image": "https://i.ibb.co/NC4dPYB/DWST83412-1-1-removebg-preview-1.png"
   }
 ]
