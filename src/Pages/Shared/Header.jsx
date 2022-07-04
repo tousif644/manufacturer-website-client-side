@@ -1,7 +1,15 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../../firebase.init';
 
 const Header = () => {
+    const [user] = useAuthState(auth);
+
+    const logOut = () => {
+        signOut(auth);
+    }
     return (
         <div className=''>
             <div class="navbar bg-primary text-white  px-14 sticky">
@@ -45,7 +53,9 @@ const Header = () => {
                         <li><Link to="/portfolio">Portfolio</Link></li>
                         <li><Link to="">Dashboard</Link></li>
                     </ul>
-                    <Link to="/login" class="btn btn-secondary ">Log in</Link>
+                    {
+                        user ? <button className='btn btn-secondary text-white' onClick={logOut}>Log out</button> : <Link to="login" className='btn btn-secondary text-white'>Log in</Link>
+                    }
                     {/* <p className="text-neutral font-bold pl-3" style={{ fontSize: "1px" }}>Customer Service
                         <br />
                         (+880 01923456787)
@@ -53,7 +63,7 @@ const Header = () => {
                 </div>
 
                 <div className='lg:hidden navbar-end'>
-                    <Link to="" class="btn btn-secondary lg:hidden">Log in</Link>
+                    <Link to="/login" class="btn btn-secondary lg:hidden">Log in</Link>
                 </div>
 
             </div>

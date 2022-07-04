@@ -1,49 +1,76 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
 import auth from './../../firebase.init';
 import Loading from '../Pages/Misc/Loading';
-const Login = () => {
-    const [
-        signInWithEmailAndPassword,
+import { Link, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { async } from '@firebase/util';
+
+const Register = () => {
+    const { register, formState: { errors }, handleSubmit } = useForm();
+    const  [
+        createUserWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useSignInWithEmailAndPassword(auth);
-    
-    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-
-    const { register, formState: { errors }, handleSubmit } = useForm();
-    const navigate = useNavigate();
-    let sigInError;
-
+    ]= useCreateUserWithEmailAndPassword(auth);
+    const [gUser, gError, gLoading, signInWithGoogle] = useSignInWithGoogle(auth);
+    const [updateProfile, updating, updatError] = useUpdateProfile(auth);
 
     // log the data from form
-    const onSubmit = (data) => {
-        const email = data.email;
-        const password = data.password;
-        signInWithEmailAndPassword(email, password);
-    };
-    if (user || gUser) {
-        navigate('/allTools')
-    }
-    if (loading || gLoading) {
+
+
+    const naviagate = useNavigate();
+    let regError;
+
+    if (loading || gLoading || updating) {
         return <Loading></Loading>
     }
-
-    if (error || gError) {
-        sigInError = (
-            <p className='text-red-500'>{error.message.slice(10,-1)}</p>
+    if (error || gError || updatError) {
+        regError = (
+            <p>{error.message || gError.message || updatError.message}</p>
         )
     }
+    if (user || gUser) {
+        naviagate('/allTools')
+    }
 
+    const onSubmit = async (data) => {
+        console.log(data.name,data.email,data.password);
+        await createUserWithEmailAndPassword(data.email, data.password);
+        await updateProfile({ displayName: data.name })
+    };
     return (
         <div className='flex justify-center  h-screen items-center'>
             <div class="card w-96 shadow-xl">
                 <div class="card-body">
-                    <h2 class="card-title">Login 🔧🔨</h2>
+                    <h2 class="card-title">Register 🧰📝</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
+
+                        {/* Name */}
+                        <div class="form-control w-full max-w-xs ">
+                            <label class="label">
+                                <span class="label-text">Name</span>
+                            </label>
+                            <input type="name" placeholder="Enter your name" class="input input-bordered w-full max-w-xs"
+                                {...register("name", {
+                                    required: {
+                                        value: true,
+                                        message: "Name is Required"
+                                    },
+                                    minLength: {
+                                        value: 6,
+                                        message: "name should be 6 character long or longer"
+                                    }
+                                })} />
+                            {errors.name?.type === 'required' && <span className='label-text-alt text-red-500 text-xl'>{errors.name?.message}</span>}
+
+                            {errors.name?.type === 'pattern' && <span className='label-text-alt text-red-500 text-xl'>{errors.name?.message}</span>}
+                        </div>
+                        {/* Name*/}
+
+
+
 
                         {/* Email */}
                         <div class="form-control w-full max-w-xs ">
@@ -96,11 +123,11 @@ const Login = () => {
                             value="Login"
                         />
                     </form>
-                    <p>{sigInError}</p>
+                    <p>{regError}</p>
                     <p>New to Equipo ? <Link to="/register" className='text-secondary'>Create an Account</Link></p>
                     {/* Login Form */}
                     <div class="divider">OR</div>
-                    <button onClick={() => signInWithGoogle()} className='btn btn-primary btn-outline capitalize'><img src="https://i.ibb.co/WvWqqqr/pngwing-com.png" alt="" width={25} className="mx-2"/>  Sign in with Google</button>
+                    <button onClick={() => signInWithGoogle()} className='btn btn-primary btn-outline capitalize'><img src="https://i.ibb.co/WvWqqqr/pngwing-com.png" alt="" width={25} className="mx-2" />  Sign in with Google</button>
                 </div>
             </div>
 
@@ -108,4 +135,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;
