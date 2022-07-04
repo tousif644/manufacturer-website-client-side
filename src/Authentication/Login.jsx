@@ -1,16 +1,42 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
-
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from "react-firebase-hooks/auth";
+import auth from './../../firebase.init';
+import Loading from '../Pages/Misc/Loading';
 const Login = () => {
+    const [
+        signInWithEmailAndPassword,
+        user,
+        loading,
+        error,
+    ] = useSignInWithEmailAndPassword(auth);
+    
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const navigate = useNavigate();
+    let sigInError;
+
 
     // log the data from form
     const onSubmit = (data) => {
         const email = data.email;
         const password = data.password;
-        console.log(email,password);
+        signInWithEmailAndPassword(email, password);
     };
+    if (user || gUser) {
+        navigate('/allTools')
+    }
+    if (loading || gLoading) {
+        return <Loading></Loading>
+    }
+
+    if (error || gError) {
+        sigInError = (
+            <p className='text-red-500'>{error.message.slice(10,-1)}</p>
+        )
+    }
 
     return (
         <div className='flex justify-center  h-screen items-center'>
@@ -70,10 +96,11 @@ const Login = () => {
                             value="Login"
                         />
                     </form>
+                    <p>{sigInError}</p>
                     <p>New to Equipo ? <Link to="" className='text-secondary'>Create an Account</Link></p>
                     {/* Login Form */}
                     <div class="divider">OR</div>
-                    <button className='btn btn-primary btn-outline capitalize'><img src="https://i.ibb.co/WvWqqqr/pngwing-com.png" alt="" width={25} className="mx-2"/>  Sign in with Google</button>
+                    <button onClick={() => signInWithGoogle()} className='btn btn-primary btn-outline capitalize'><img src="https://i.ibb.co/WvWqqqr/pngwing-com.png" alt="" width={25} className="mx-2"/>  Sign in with Google</button>
                 </div>
             </div>
 

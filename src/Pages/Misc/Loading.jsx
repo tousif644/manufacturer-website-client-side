@@ -1,13 +1,9 @@
 import React from 'react';
-import  Zoom  from 'react-reveal/Zoom';
 
 const Loading = () => {
     return (
         <div>
-            <Zoom left>
-                <h1 >Loading....</h1>
-            </Zoom>
-
+            <h1 className='text-5xl flex justify-center items-center text-secondary'>Loading....</h1>
         </div>
     );
 };
