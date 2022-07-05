@@ -4,7 +4,7 @@ const Tool = ({ tools }) => {
     const {_id, price, name, image } = tools;
     const navigate = useNavigate();
     const navigateProductDetails = (id) => {
-        navigate(`/product-details/${id}`)
+        navigate(`/tools-details/${id}`)
     }
     return (
         <div >
@@ -21,7 +21,7 @@ const Tool = ({ tools }) => {
                         <div class="badge badge-outline bg-secondary text-white">Unique Products</div>
                     </div>
                 </div>
-                    <button className='px-5 btn btn-primary rounded-none text-white' >Buy</button>
+                    <button className='px-5 btn btn-primary rounded-none text-white'onClick={() => navigateProductDetails(_id)} >See details</button>
             </div>
         </div>
     );

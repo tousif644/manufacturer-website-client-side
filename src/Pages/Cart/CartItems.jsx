@@ -5,7 +5,6 @@ import ShowCartItems from './ShowCartItems';
 
 const CartItems = () => {
     const [cartItem, setCartItem] = useState([]);
-    console.log(cartItem);
     const [user] = useAuthState(auth);
     useEffect(() => {
         if (user) {
@@ -15,7 +14,7 @@ const CartItems = () => {
                     setCartItem(data)
                 })
         }
-    }, [])
+    }, [cartItem])
 
     return (
         <div>

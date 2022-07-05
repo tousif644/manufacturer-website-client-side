@@ -25,7 +25,8 @@ count is: {count}
         userEmail: user.email,
         price: tools.price,
         quantity: quantity,
-        totalPrice: total
+        totalPrice: total,
+        userEmail : user.email,
     }
 
     const postToDb = () => {
@@ -38,14 +39,17 @@ count is: {count}
         })
             .then(res => res.json())
             .then(data => {
-                if (data.insertedId) {
+                if (data.success) {
                     toast.success("Added to cart")
+                } else {
+                    toast.error("Error")
                 }
             })
     }
     return (
         <div>
-            <h1>Product Details</h1>
+            <p className='text-xl px-2'><Link to="/home">👈 Back to home</Link></p>
+            <h1 className='text-4xl underline font-bold text-center my-2'>Product Details</h1>
             <div class="hero min-h-screen mx-auto ">
                 <div class="hero-content  flex-col lg:flex-row">
                     <img src={tools.image} class="w-8/12 rounded-lg" />

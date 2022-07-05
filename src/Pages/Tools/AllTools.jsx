@@ -5,7 +5,7 @@ import ShowAllTools from './ShowAllTools';
 
 const AllTools = () => {
     // fetching data
-    const { data: tools, isLoading } = useQuery('tools', () => fetch('http://localhost:5000/tools').then(res => res.json()))
+    const { data: tools, isLoading , refetch} = useQuery('tools', () => fetch('http://localhost:5000/tools').then(res => res.json()))
 
     if (isLoading) {
         return <Loading></Loading>
@@ -16,7 +16,7 @@ const AllTools = () => {
             <h1 className='text-center text-5xl  my-2 font-bold'>Our Tools</h1>
             <div className='mx-auto grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-7 my-2 p-8'>
                 {
-                    tools.map(tool => <ShowAllTools key={tool._id} tools={tool}></ShowAllTools>)
+                    tools.map(tool => <ShowAllTools key={tool._id} tools={tool} refetch={refetch}></ShowAllTools>)
                 }
             </div>
         </div>

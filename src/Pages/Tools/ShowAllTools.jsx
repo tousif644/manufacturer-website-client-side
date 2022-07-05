@@ -9,8 +9,8 @@ const ShowAllTools = ({ tools }) => {
     }
     return (
         <div>
-            <div class="card w-4/5 mx-auto bg-base-100 shadow-xl">
-                <figure><img src={image} alt="tools-image" width={250} /></figure>
+            <div class="card w-full mx-auto bg-base-100 shadow-xl">
+                <figure><img src={image} alt="tools-image" width={300} /></figure>
                 <div class="card-body">
                     <h2 class="card-title text-md">
                         {name}
@@ -22,7 +22,7 @@ const ShowAllTools = ({ tools }) => {
                         <div class="badge badge-outline bg-secondary text-white">Unique Products</div>
                     </div>
                 </div>
-                <button className='px-5 btn btn-primary rounded-none text-white' onClick={() => navigateProductDetails(_id)}>Buy</button>
+                <button className='px-5 btn btn-primary rounded-none text-white' onClick={() => navigateProductDetails(_id)}>See details</button>
             </div>
         </div>
     );
