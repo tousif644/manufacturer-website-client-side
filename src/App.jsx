@@ -9,6 +9,11 @@ import Portfolio from './Pages/Portfolio/Portfolio';
 import Footer from './Pages/Shared/Footer';
 import Header from './Pages/Shared/Header';
 import AllTools from './Pages/Tools/AllTools';
+import ToolsDetails from './Pages/Tools/ToolsDetails';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 function App() {
 
   return (
@@ -23,8 +28,11 @@ function App() {
         </RequireAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/tools-details/:serviceId' element={<ToolsDetails></ToolsDetails>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer />
+
     </div>
   )
 }
