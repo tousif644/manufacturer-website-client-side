@@ -12,6 +12,7 @@ import AllTools from './Pages/Tools/AllTools';
 import ToolsDetails from './Pages/Tools/ToolsDetails';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import CartItems from './Pages/Cart/CartItems';
 
 
 function App() {
@@ -28,7 +29,12 @@ function App() {
         </RequireAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
-        <Route path='/tools-details/:serviceId' element={<ToolsDetails></ToolsDetails>}></Route>
+        <Route path='/tools-details/:serviceId' element={<RequireAuth>
+          <ToolsDetails></ToolsDetails>
+        </RequireAuth>}></Route>
+        <Route path="/cart-items" element={<RequireAuth>
+          <CartItems></CartItems>
+        </RequireAuth>}></Route>
       </Routes>
       <Footer></Footer>
       <ToastContainer />

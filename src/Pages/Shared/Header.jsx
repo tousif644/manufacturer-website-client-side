@@ -53,8 +53,11 @@ const Header = () => {
                         <li><Link to="/portfolio">Portfolio</Link></li>
                         <li>
                             {
-                                user && <Link to="">Dashboard</Link>
+                                user ? <Link to="">Dashboard</Link> : ""
                             }
+                        </li>
+                        <li>
+                            <Link to="/cart-items">My Cart</Link>
                         </li>
                     </ul>
                     {
