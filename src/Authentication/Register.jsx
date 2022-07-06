@@ -127,7 +127,7 @@ const Register = () => {
                         />
                     </form>
                     <p>{regError}</p>
-                    <p>New to Equipo ? <Link to="/register" className='text-secondary'>Create an Account</Link></p>
+                    <p>Already have an account ? <Link to="/login" className='text-secondary'>Login</Link></p>
                     {/* Login Form */}
                     <div class="divider">OR</div>
                     <button onClick={() => signInWithGoogle()} className='btn btn-primary btn-outline capitalize'><img src="https://i.ibb.co/WvWqqqr/pngwing-com.png" alt="" width={25} className="mx-2" />  Sign in with Google</button>
