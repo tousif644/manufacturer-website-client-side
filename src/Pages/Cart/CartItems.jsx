@@ -25,35 +25,21 @@ const CartItems = () => {
                 signOut(auth);
                 localStorage.removeItem("accessToken")
             } 
-            console.log(error.config);
         })
     }
+
+    
     const { isLoading, data, refetch } = useQuery('super-heroes', fetchData)
-    console.log(data);
-    // useEffect(() => {
-    //     if (user) {
-    //         fetch(`http://localhost:5000/cart/${user.email}`, {
-    //             method: "GET",
-    //             headers: {
-    //                 'authorization' : `token ${localStorage.getItem('accessToken')}`
-    //             }
-    //         })
-    //             .then(res => res.json())
-    //             .then(data => {
-    //                 setCartItem(data)
-    //             })
-    //     }
-    // }, [])
     if (isLoading) {
         <Loading></Loading>
     }
     return (
         <div>
-            <h1 className='text-end text-xl mx-4'>Your Ordered Item : {""}</h1>
+            <h1 className='text-end text-xl mx-4'>Your Ordered Item : {data?.data.length}</h1>
             <div>
-                {/* {
-                    cartItem.length === 0 && <h1 className='text-xs badge rounded p-3'>Your Cart is empty order some</h1>
-                } */}
+                {
+                    data?.data.length === 0 && <h1 className='text-xs badge rounded p-3'>Your Cart is empty order some</h1>
+                }
             </div>
             <div class="mx-auto">
                 <div class="overflow-x-auto">
