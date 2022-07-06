@@ -18,6 +18,7 @@ import Review from './Pages/Dashboard/Review';
 import CartItems from './Pages/Cart/CartItems';
 import Blogs from './Pages/Blogs/Blogs';
 import BlogContent from './Pages/Blogs/BlogContent';
+import AllUsers from './Pages/Dashboard/AllUsers';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
         </RequireAuth>}>
           <Route index element={<CartItems></CartItems>}></Route>
           <Route path='review' element={<Review></Review>}></Route>
+          <Route path='users' element={<AllUsers></AllUsers>}></Route>
         </Route>
       </Routes> 
 

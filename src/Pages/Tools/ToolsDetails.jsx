@@ -33,7 +33,8 @@ count is: {count}
         fetch(`http://localhost:5000/cart`, {
             method: "POST",
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                'authorization' : `Token ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(bookingData)
         })
