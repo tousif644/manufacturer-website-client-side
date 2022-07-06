@@ -10,11 +10,17 @@ const ShowAllUsers = ({ index, data, refetch }) => {
                 authorization: `Token ${localStorage.getItem("accessToken")}`
             }
         })
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 403) {
+                    toast.error("Failed to make an admin")
+                }
+            })
             .then(data => {
-                toast.success("Successfully made an admin");
-                console.log(data)
-                refetch();
+                if (data.modifiedCount > 0) {
+                    toast.success("Successfully made an admin");
+                    console.log(data)
+                    refetch();
+                }
             })
 
     }
