@@ -5,6 +5,7 @@ import Loading from '../Pages/Misc/Loading';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { async } from '@firebase/util';
+import useToken from '../Pages/Hooks/useToken';
 
 const Register = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -16,6 +17,8 @@ const Register = () => {
     ]= useCreateUserWithEmailAndPassword(auth);
     const [gUser, gError, gLoading, signInWithGoogle] = useSignInWithGoogle(auth);
     const [updateProfile, updating, updatError] = useUpdateProfile(auth);
+
+    const [token] = useToken(user || gUser);
 
     // log the data from form
 
@@ -31,7 +34,7 @@ const Register = () => {
             <p>{error.message || gError.message || updatError.message}</p>
         )
     }
-    if (user || gUser) {
+    if (token) {
         naviagate('/allTools')
     }
 
