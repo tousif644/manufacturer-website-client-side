@@ -1,6 +1,5 @@
 import React from 'react';
 import Blogs from './Blogs';
-import reactImg from "../../Images/React-icon.svg"
 const BlogContent = () => {
     return (
         <>
