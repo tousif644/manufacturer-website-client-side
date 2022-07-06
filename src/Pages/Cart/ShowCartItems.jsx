@@ -3,7 +3,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { toast } from 'react-toastify';
 
-const ShowCartItems = ({ cart, index }) => {
+const ShowCartItems = ({ cart, index, refetch }) => {
     const { _id, price, toolName, quantity, totalPrice } = cart;
     const [user] = useAuthState(auth);
 
@@ -15,6 +15,7 @@ const ShowCartItems = ({ cart, index }) => {
             .then(data => {
                 if (data.deletedCount) {
                     toast.success("Deleted successfully");
+                    refetch()
                 }
             })
     }

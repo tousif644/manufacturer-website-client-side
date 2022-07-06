@@ -2,26 +2,58 @@ import React, { useState, useEffect } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './../../../firebase.init';
 import ShowCartItems from './ShowCartItems';
+import { useQuery } from 'react-query';
+import axios from 'axios';
+import Loading from '../Misc/Loading';
+import { useNavigate } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
 
 const CartItems = () => {
-    const [cartItem, setCartItem] = useState([]);
+    const navigate = useNavigate();
     const [user] = useAuthState(auth);
-    useEffect(() => {
-        if (user) {
-            fetch(`http://localhost:5000/cart/${user.email}`)
-                .then(res => res.json())
-                .then(data => {
-                    setCartItem(data)
-                })
-        }
-    }, [cartItem])
+
+    const fetchData = () => {
+        return axios.get(`http://localhost:5000/cart/${user.email}`, {
+            method: "GET",
+            headers: {
+                'authorization': `Token ${localStorage.getItem('accessToken')}`
+            }
+        }).catch(function (error) {
+            if (error.response.status === 403 || error.response.status === 401) {
+                console.log(error.response.status);
+                navigate("/home");
+                signOut(auth);
+                localStorage.removeItem("accessToken")
+            } 
+            console.log(error.config);
+        })
+    }
+    const { isLoading, data, refetch } = useQuery('super-heroes', fetchData)
+    console.log(data);
+    // useEffect(() => {
+    //     if (user) {
+    //         fetch(`http://localhost:5000/cart/${user.email}`, {
+    //             method: "GET",
+    //             headers: {
+    //                 'authorization' : `token ${localStorage.getItem('accessToken')}`
+    //             }
+    //         })
+    //             .then(res => res.json())
+    //             .then(data => {
+    //                 setCartItem(data)
+    //             })
+    //     }
+    // }, [])
+    if (isLoading) {
+        <Loading></Loading>
+    }
     return (
         <div>
-            <h1 className='text-end text-xl mx-4'>Your Ordered Item : {cartItem.length}</h1>
+            <h1 className='text-end text-xl mx-4'>Your Ordered Item : {""}</h1>
             <div>
-                {
+                {/* {
                     cartItem.length === 0 && <h1 className='text-xs badge rounded p-3'>Your Cart is empty order some</h1>
-                }
+                } */}
             </div>
             <div class="mx-auto">
                 <div class="overflow-x-auto">
@@ -38,7 +70,7 @@ const CartItems = () => {
                         </thead>
                         <tbody>
                             {
-                                cartItem.map((cart, index) => <ShowCartItems key={cart._id} cart={cart} index={index}></ShowCartItems>)
+                                data?.data.map((cart, index) => <ShowCartItems key={cart._id} cart={cart} index={index} refetch={refetch}></ShowCartItems>)
                             }
                         </tbody>
                     </table>
