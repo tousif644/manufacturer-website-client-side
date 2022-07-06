@@ -41,7 +41,7 @@ const Header = () => {
                     </div>
                     <Link to="/" class="btn btn-ghost normal-case text-3xl">EQUIPO</Link>
                 </div>
-                <div class="navbar-end hidden lg:flex mx-0">
+                <div class="navbar-center hidden lg:flex ">
                     <ul class="menu menu-horizontal p-0">
                         <li><Link to="/home">Home</Link></li>
                         <li tabindex="0">
@@ -49,7 +49,7 @@ const Header = () => {
                                 Our Tools
                             </Link>
                         </li>
-                        <li><Link to="">Blogs</Link></li>
+                        <li><Link to="/blogs">Blogs</Link></li>
                         <li><Link to="/portfolio">Portfolio</Link></li>
                         <li>
                             {
@@ -65,17 +65,18 @@ const Header = () => {
                         </li>
                         <>
                             <li className='mt-4 mx-1 rounded-md badge'>
-                            {user?.displayName}
+                                {user?.displayName}
                             </li>
                         </>
                     </ul>
                 </div>
-                <div className='lg:hidden navbar-end'>
+                <div className='navbar-end'>
                     <Link to="/login" class="btn btn-secondary lg:hidden">Log in</Link>
-                    <div className='flex navbar-end  '>
-                        <label for="my-drawer-2" class="btn btn-accent drawer-button lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg></label>
-                    </div>
+ <div className='flex navbar-end  '>
+                    <label for="my-drawer-2" class="btn btn-accent drawer-button lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg></label>
                 </div>
+                </div>
+               
             </div>
         </div>
     );

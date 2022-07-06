@@ -16,6 +16,8 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import ShowCartItems from './Pages/Cart/ShowCartItems';
 import Review from './Pages/Dashboard/Review';
 import CartItems from './Pages/Cart/CartItems';
+import Blogs from './Pages/Blogs/Blogs';
+import BlogContent from './Pages/Blogs/BlogContent';
 
 
 function App() {
@@ -36,6 +38,7 @@ function App() {
           <ToolsDetails></ToolsDetails>
         </RequireAuth>}></Route>
         {/* <Route path='/cart-items' element={<CartItems></CartItems>}></Route> */}
+        <Route path='/blogs' element={<BlogContent></BlogContent>}></Route>
         <Route path='/dashboard' element={<RequireAuth>
           <Dashboard></Dashboard>
         </RequireAuth>}>
