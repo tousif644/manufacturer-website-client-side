@@ -12,6 +12,9 @@ import AllTools from './Pages/Tools/AllTools';
 import ToolsDetails from './Pages/Tools/ToolsDetails';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import ShowCartItems from './Pages/Cart/ShowCartItems';
+import Review from './Pages/Dashboard/Review';
 import CartItems from './Pages/Cart/CartItems';
 
 
@@ -32,10 +35,16 @@ function App() {
         <Route path='/tools-details/:serviceId' element={<RequireAuth>
           <ToolsDetails></ToolsDetails>
         </RequireAuth>}></Route>
-        <Route path="/cart-items" element={<RequireAuth>
-          <CartItems></CartItems>
-        </RequireAuth>}></Route>
-      </Routes>
+        {/* <Route path='/cart-items' element={<CartItems></CartItems>}></Route> */}
+        <Route path='/dashboard' element={<RequireAuth>
+          <Dashboard></Dashboard>
+        </RequireAuth>}>
+          <Route index element={<CartItems></CartItems>}></Route>
+          <Route path='review' element={<Review></Review>}></Route>
+        </Route>
+      </Routes> 
+
+
       <Footer></Footer>
       <ToastContainer />
 

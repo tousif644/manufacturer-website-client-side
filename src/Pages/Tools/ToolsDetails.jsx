@@ -39,10 +39,8 @@ count is: {count}
         })
             .then(res => res.json())
             .then(data => {
-                if (data.success) {
-                    toast.success("Added to cart")
-                } else {
-                    toast.error("Error")
+                if (data.insertedId) {
+                    toast.success("Ordered Successfully !!")
                 }
             })
     }
@@ -55,13 +53,13 @@ count is: {count}
                     <img src={tools.image} class="w-8/12 rounded-lg" />
                     <div>
                         <h1 class="text-5xl font-bold">{tools.name}</h1>
-                        <p class="py-6 text-3xl text-secondary">Price {tools.price}</p>
+                        <p class="py-6 text-3xl text-secondary">Price ${tools.price}</p>
                         {/* <p>Total : </p> */}
                         <p>
                             <span className='text-2xl'>Quantity :</span>
                             <button className='btn btn-square mx-3' onClick={
                                 () => {
-                                    if (quantity > 2) {
+                                    if (quantity > 2 ) {
                                         setQuantity((quantity) - 2)
                                     }
                                 }}> - </button>
@@ -75,9 +73,8 @@ count is: {count}
                         </p>
                         <p>Stock left : {tools.stock - quantity}</p>
 
-                        <p className='text-xl my-3'>Total : {(total.toFixed(2))}</p>
-                        <button class="btn btn-primary text-white my-2">Proceed to checkout</button>
-                        <button className='btn btn-secondary mx-2 text-white' onClick={postToDb}>Add to Cart</button>
+                        <p className='text-xl my-3'>Total : ${(total.toFixed(2))}</p>
+                        <button className='btn btn-secondary mx-2 text-white' onClick={postToDb}>Buy Now</button>
                     </div>
                 </div>
             </div>
