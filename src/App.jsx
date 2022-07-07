@@ -32,9 +32,7 @@ function App() {
         <Route path='/' element={<Intro></Intro>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
-        <Route path='/allTools' element={<RequireAuth>
-          <AllTools></AllTools>
-        </RequireAuth>}></Route>
+        <Route path='/allTools' element={<AllTools></AllTools>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
         <Route path='/tools-details/:serviceId' element={<RequireAuth>
@@ -50,11 +48,13 @@ function App() {
           <Route path='users' element={<RequireAdmin>
             <AllUsers></AllUsers>
           </RequireAdmin>}></Route>
-          <Route path='orders' element={<AllOrders></AllOrders>}></Route>
+          <Route path='orders' element={<RequireAdmin>
+            <AllOrders></AllOrders>
+          </RequireAdmin>}></Route>
         </Route>
       </Routes>
       <ToastContainer />
-        
+
     </div>
   )
 }
