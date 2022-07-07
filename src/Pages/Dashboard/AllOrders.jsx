@@ -14,7 +14,7 @@ const AllOrders = () => {
         })
     }
 
-    const { isLoading, data } = useQuery('orders', fetchOrders);
+    const { isLoading, data ,refetch} = useQuery('orders', fetchOrders);
 
     if (isLoading) {
         return <Loading></Loading>
@@ -37,7 +37,7 @@ const AllOrders = () => {
                     </thead>
                     <tbody>
                         {
-                            data?.data.map((datas, index) => <ShowAllOrders key={datas._id} index={index} datas={datas}></ShowAllOrders>)
+                            data?.data.map((datas, index) => <ShowAllOrders key={datas._id} index={index} datas={datas} refetch={refetch}></ShowAllOrders>)
                         }
                     </tbody>
                 </table>
