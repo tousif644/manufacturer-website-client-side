@@ -22,7 +22,8 @@
     "react-slick": "^0.29.0",
     "react-toastify": "^9.0.5",
     "react-vertical-timeline-component": "^3.5.2",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "stripe": "^9.11.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.0",

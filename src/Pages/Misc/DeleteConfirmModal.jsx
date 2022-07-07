@@ -8,6 +8,9 @@ const DeleteConfirmModal = ({ deletingItems, refetch, setDeletingItems }) => {
     const handleDelete = (email) => {
         fetch(`http://localhost:5000/cart/${email}`, {
             method: "DELETE",
+            headers: {
+                authorization: `Token ${localStorage.getItem('accessToken')}`
+            }
         })
             .then(res => res.json())
             .then(data => {

@@ -8,7 +8,7 @@ const AllUsers = () => {
         return axios.get("http://localhost:5000/users", {
             method: "GET",
             headers: {
-                'authorization': `Token ${localStorage.getItem('accessToken')}`
+                authorization: `Token ${localStorage.getItem('accessToken')}`
             }
         })
             .catch(function (error) {
@@ -36,7 +36,7 @@ const AllUsers = () => {
                     </thead>
                     <tbody>
                         {
-                            data?.data.map((d, index) => <ShowAllUsers index={index} refetch={refetch} data={d}></ShowAllUsers>)
+                            data?.data.map((d, index) => <ShowAllUsers key={d._id} index={index} refetch={refetch} data={d}></ShowAllUsers>)
                         }
                     </tbody>
                 </table>

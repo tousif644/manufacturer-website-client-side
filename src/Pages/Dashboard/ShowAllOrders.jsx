@@ -9,27 +9,27 @@ const ShowAllOrders = ({ datas, index, refetch, setDeletingItems }) => {
     const { _id, toolName, userName, userEmail, price, quantity, totalPrice } = datas
 
     const navigate = useNavigate();
-    // const handleDelete = (email) => {
-    //     fetch(`http://localhost:5000/cart/${email}`, {
-    //         method: "DELETE",
-    //         headers: {
-    //             authorization: `Token ${localStorage.getItem('acessToken')}`
-    //         }
-    //     }).then(res => {
-    //         if (res.status === 403 || res.status === 401) {
-    //             toast.error("Can't Delete");
-    //             navigate('/');
-    //             signOut(auth);
-    //             localStorage.removeItem('accessToken')
-    //         }
-    //     })
-    //         .then(data => {
-    //             if (data.success) {
-    //                 toast.success("Successfully deleted")
-    //             }
-    //             refetch();
-    //         })
-    // }
+    const handleDelete = (email) => {
+        fetch(`http://localhost:5000/cart/${email}`, {
+            method: "DELETE",
+            headers: {
+                authorization: `Token ${localStorage.getItem('accessToken')}`
+            }
+        }).then(res => {
+            if (res.status === 403 || res.status === 401) {
+                toast.error("Can't Delete");
+                navigate('/');
+                signOut(auth);
+                localStorage.removeItem('accessToken')
+            }
+        })
+            .then(data => {
+                if (data.success) {
+                    toast.success("Successfully deleted")
+                }
+                refetch();
+            })
+    }
     return (
         <tr>
             <th>{index + 1}</th>

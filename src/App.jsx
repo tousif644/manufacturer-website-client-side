@@ -21,6 +21,7 @@ import BlogContent from './Pages/Blogs/BlogContent';
 import AllUsers from './Pages/Dashboard/AllUsers';
 import RequireAdmin from './Authentication/RequireAdmin';
 import AllOrders from './Pages/Dashboard/AllOrders';
+import Payment from './Pages/Dashboard/Payment';
 
 
 function App() {
@@ -45,6 +46,7 @@ function App() {
         </RequireAuth>}>
           <Route index element={<CartItems></CartItems>}></Route>
           <Route path='review' element={<Review></Review>}></Route>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
           <Route path='users' element={<RequireAdmin>
             <AllUsers></AllUsers>
           </RequireAdmin>}></Route>

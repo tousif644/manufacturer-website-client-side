@@ -19,14 +19,13 @@ count is: {count}
 </button> */}
 
     const bookingData = {
-        toolId: tools._id,
+        toolId : tools._id,
         toolName: tools.name,
         userName: user.displayName,
         userEmail: user.email,
         price: tools.price,
         quantity: quantity,
         totalPrice: total,
-        userEmail : user.email,
     }
 
     const postToDb = () => {
@@ -34,7 +33,7 @@ count is: {count}
             method: "POST",
             headers: {
                 'content-type': 'application/json',
-                'authorization' : `Token ${localStorage.getItem('accessToken')}`
+                authorization: `Token ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(bookingData)
         })
@@ -60,7 +59,7 @@ count is: {count}
                             <span className='text-2xl'>Quantity :</span>
                             <button className='btn btn-square mx-3' onClick={
                                 () => {
-                                    if (quantity > 2 ) {
+                                    if (quantity > 2) {
                                         setQuantity((quantity) - 2)
                                     }
                                 }}> - </button>
