@@ -1,9 +1,11 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
+import DeleteUserModal from '../Misc/DeleteUserModal';
 import ShowAllUsers from './ShowAllUsers';
 
 const AllUsers = () => {
+    const [deletingUser, setDeletingUser] = useState(null);
     const getUsers = () => {
         return axios.get("http://localhost:5000/users", {
             method: "GET",
@@ -36,11 +38,12 @@ const AllUsers = () => {
                     </thead>
                     <tbody>
                         {
-                            data?.data.map((d, index) => <ShowAllUsers index={index} refetch={refetch} data={d}></ShowAllUsers>)
+                            data?.data.map((d, index) => <ShowAllUsers index={index} refetch={refetch} data={d} setDeletingUser={setDeletingUser}></ShowAllUsers>)
                         }
                     </tbody>
                 </table>
             </div>
+            {deletingUser && <DeleteUserModal deletingUser={deletingUser} setDeletingUser={setDeletingUser} refetch={refetch}></DeleteUserModal>}
         </div>
     );
 };
