@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../Shared/Footer';
 import Blogs from './Blogs';
 const BlogContent = () => {
     return (
@@ -18,6 +19,7 @@ const BlogContent = () => {
                 <Blogs title="Why you do not set the state directly in React. For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts" description="One should never update the state directly because If you update it directly, calling the setState() afterward may just replace the update you made and later when you want to update the state, it doest not the change the state immediately"></Blogs>
 
             </div>
+            <Footer />
         </>
     );
 };

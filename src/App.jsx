@@ -53,11 +53,8 @@ function App() {
           <Route path='orders' element={<AllOrders></AllOrders>}></Route>
         </Route>
       </Routes>
-
-
-      <Footer></Footer>
       <ToastContainer />
-
+        
     </div>
   )
 }

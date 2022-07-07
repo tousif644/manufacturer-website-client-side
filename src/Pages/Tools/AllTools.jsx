@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Loading from '../Misc/Loading';
+import Footer from '../Shared/Footer';
 import ShowAllTools from './ShowAllTools';
 
 const AllTools = () => {
@@ -19,6 +20,7 @@ const AllTools = () => {
                     tools.map(tool => <ShowAllTools key={tool._id} tools={tool} refetch={refetch}></ShowAllTools>)
                 }
             </div>
+            <Footer />
         </div>
     );
 };

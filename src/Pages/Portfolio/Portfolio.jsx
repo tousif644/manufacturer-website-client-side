@@ -4,6 +4,7 @@ import facebook from "../../Images/facebook-svgrepo-com.svg";
 import twitter from "../../Images/twitter-svgrepo-com.svg"
 import linkedin from "../../Images/linkedin-linked-in-svgrepo-com.svg"
 import ProjectsData from './ProjectsData';
+import Footer from '../Shared/Footer';
 const Portfolio = () => {
     return (
         <div>
@@ -41,6 +42,7 @@ const Portfolio = () => {
                 <h1 className='text-5xl underline text-center'>My Projects</h1>
                 <ProjectsData></ProjectsData>
             </div>
+            <Footer />
         </div>
     );
 };
