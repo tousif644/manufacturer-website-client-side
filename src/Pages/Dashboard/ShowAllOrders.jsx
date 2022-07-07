@@ -5,8 +5,9 @@ import { signOut } from 'firebase/auth';
 import auth from './../../../firebase.init';
 import { toast } from 'react-toastify';
 
-const ShowAllOrders = ({ datas, index, refetch }) => {
+const ShowAllOrders = ({ datas, index, refetch, setDeletingItems }) => {
     const { _id, toolName, userName, userEmail, price, quantity, totalPrice } = datas
+
     const navigate = useNavigate();
     const handleDelete = (email) => {
         fetch(`http://localhost:5000/cart/${email}`, {
@@ -37,7 +38,7 @@ const ShowAllOrders = ({ datas, index, refetch }) => {
             <td>${totalPrice}</td>
             <td>
 
-                <label for="delete-confirm-modal" class=" btn btn-xs modal-button">open modal</label>
+                <label onClick={() => setDeletingItems(datas)} for="delete-confirm-modal" class=" btn btn-xs modal-button">open modal</label>
                 <button className='btn btn-xs btn-error text-white' onClick={() => handleDelete(userEmail)}>Delete</button>
             </td>
         </tr>

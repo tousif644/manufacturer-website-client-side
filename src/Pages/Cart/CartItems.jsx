@@ -7,10 +7,12 @@ import axios from 'axios';
 import Loading from '../Misc/Loading';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
+import DeleteConfirmModal from '../Misc/DeleteConfirmModal';
 
 const CartItems = () => {
     const navigate = useNavigate();
     const [user] = useAuthState(auth);
+    const [deletingItems, setDeletingItems] = useState(null)
 
     const fetchData = () => {
         return axios.get(`http://localhost:5000/cart/${user.email}`, {
@@ -24,11 +26,11 @@ const CartItems = () => {
                 navigate("/home");
                 signOut(auth);
                 localStorage.removeItem("accessToken")
-            } 
+            }
         })
     }
 
-    
+
     const { isLoading, data, refetch } = useQuery('super-heroes', fetchData)
     if (isLoading) {
         <Loading></Loading>
@@ -56,12 +58,13 @@ const CartItems = () => {
                         </thead>
                         <tbody>
                             {
-                                data?.data.map((cart, index) => <ShowCartItems key={cart._id} cart={cart} index={index} refetch={refetch}></ShowCartItems>)
+                                data?.data.map((cart, index) => <ShowCartItems key={cart._id} cart={cart} index={index} refetch={refetch} setDeletingItems={setDeletingItems}></ShowCartItems>)
                             }
                         </tbody>
                     </table>
                 </div>
             </div>
+            {deletingItems && <DeleteConfirmModal deletingItems={deletingItems} refetch={refetch} setDeletingItems={setDeletingItems}></DeleteConfirmModal>}
         </div>
     );
 };
