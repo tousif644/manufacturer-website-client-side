@@ -44,9 +44,11 @@ const ShowAllUsers = ({ index, data, refetch }) => {
             })
 
             .then(data => {
+                console.log(data);
                 user.delete();
                 toast.success("User deleted successfully")
                 refetch()
+                
                 
             })
     }
