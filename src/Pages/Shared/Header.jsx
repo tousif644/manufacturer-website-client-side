@@ -58,24 +58,20 @@ const Header = () => {
                             }
                         </li>
 
-                        <li>
-                            {
-                                user ? <button className='btn btn-secondary text-white' onClick={logOut}>Log out</button> : <Link to="login" className='btn btn-secondary text-white'>Log in</Link>
-                            }
 
-                        </li>
-                        <>
-                            <li className='mt-4 mx-1 rounded-md badge'>
-                                {user?.displayName}
-                            </li>
-                        </>
+
+
                     </ul>
                 </div>
-                <div className='navbar-end'>
-                    <Link to="/login" class="btn btn-secondary lg:hidden">Log in</Link>
-                    <div className='flex navbar-end  '>
-                        <label for="my-drawer-2" class="btn btn-accent drawer-button lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg></label>
-                    </div>
+                <div className='navbar-end '>
+                    {
+                        user && <p className='mx-2 text-secondary'>user : {user?.displayName}</p>
+                    }
+
+                    {
+                        user ? <button className='btn btn-secondary text-white' onClick={logOut}>Log out</button> : <Link to="login" className='btn btn-secondary text-white'>Log in</Link>
+                    }
+                    <label for="my-drawer-2" class="btn btn-accent drawer-button lg:hidden"><svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg></label>
                 </div>
 
             </div>

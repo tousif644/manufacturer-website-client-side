@@ -20,6 +20,7 @@ import Blogs from './Pages/Blogs/Blogs';
 import BlogContent from './Pages/Blogs/BlogContent';
 import AllUsers from './Pages/Dashboard/AllUsers';
 import RequireAdmin from './Authentication/RequireAdmin';
+import AllOrders from './Pages/Dashboard/AllOrders';
 
 
 function App() {
@@ -39,8 +40,8 @@ function App() {
         <Route path='/tools-details/:serviceId' element={<RequireAuth>
           <ToolsDetails></ToolsDetails>
         </RequireAuth>}></Route>
-        {/* <Route path='/cart-items' element={<CartItems></CartItems>}></Route> */}
         <Route path='/blogs' element={<BlogContent></BlogContent>}></Route>
+
         <Route path='/dashboard' element={<RequireAuth>
           <Dashboard></Dashboard>
         </RequireAuth>}>
@@ -49,6 +50,7 @@ function App() {
           <Route path='users' element={<RequireAdmin>
             <AllUsers></AllUsers>
           </RequireAdmin>}></Route>
+          <Route path='orders' element={<AllOrders></AllOrders>}></Route>
         </Route>
       </Routes>
 
