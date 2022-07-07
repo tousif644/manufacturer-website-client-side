@@ -3,7 +3,7 @@ import { toast } from 'react-toastify';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './../../../firebase.init';
 
-const ShowAllUsers = ({ index, data, refetch ,setDeletingUser}) => {
+const ShowAllUsers = ({ index, data, refetch }) => {
     const { userEmail, role } = data;
     const [user] = useAuthState(auth);
     const makeAdmin = () => {
@@ -58,7 +58,7 @@ const ShowAllUsers = ({ index, data, refetch ,setDeletingUser}) => {
             <th>{userEmail}</th>
             <td>
                 {role !== 'admin' && <button className='btn btn-accent btn-xs mx-2 text-white' onClick={makeAdmin}>Make Admin</button>}
-                <label for="my-modal-6" onClick={() => setDeletingUser(data)} class="btn modal-button btn-xs btn-error text-white">Delete</label>
+                <button className='btn btn-error btn-xs text-white' onClick={deleteUser}>Delete</button>
             </td>
         </tr>
     );
