@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { async } from '@firebase/util';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 const CheckoutForm = ({ bookingData }) => {
     const [clientSecret, setClientSecret] = useState('');
     const { _id, price, userName, userEmail, totalPrice } = bookingData;
@@ -10,7 +11,7 @@ const CheckoutForm = ({ bookingData }) => {
     const stripe = useStripe();
     const elements = useElements();
     const [success, setSuccess] = useState('');
-
+    const navigate = useNavigate();
 
     //sending price
     useEffect(() => {
@@ -101,6 +102,7 @@ const CheckoutForm = ({ bookingData }) => {
         } else {
             console.log('[PaymentMethod]', paymentMethod);
         }
+        navigate('/dashboard')
     }
 
 

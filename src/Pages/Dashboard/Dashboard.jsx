@@ -28,6 +28,7 @@ const Dashboard = () => {
                         {
                             admin && <li><Link to="/dashboard/orders">All Orders</Link></li>
                         }
+                        <li><Link to="/dashboard/payment-history">Payment History</Link></li>
                     </ul>
 
                 </div>

@@ -39,6 +39,8 @@ const ShowAllOrders = ({ datas, index, refetch, setDeletingItems }) => {
             <td>${price}</td>
             <td>{quantity}</td>
             <td>${totalPrice}</td>
+            <td> {(datas.price && !datas.paid) && <p className=' text-accent mx-2'>Pending</p>}
+                {(datas.price && datas.paid) && <span className='text-orange-500 text-xl capitalize mx-2'>paied</span>}</td>
             <td>
 
                 <label onClick={() => setDeletingItems(datas)} for="delete-confirm-modal" class=" btn btn-xs modal-button">Delete</label>
