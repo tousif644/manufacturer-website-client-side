@@ -28,18 +28,24 @@ const Portfolio = () => {
 
                 </div>
             </div>
-            <h1 className='text-center text-4xl underline my-4'>My Skills as a Front End Developer</h1>
-            <div className="grid grid-cols-7 items-center p-12">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg" alt="" width={50} className="grayscale hover:grayscale-0" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="" width={50} className="grayscale hover:grayscale-0" />
-                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="" width={50} className="grayscale hover:grayscale-0" />
+            <h1 className='text-center lg:text-4xl text-2xl underline my-4'>My Skills as a Front End Developer</h1>
+            <div className="grid lg:grid-cols-7 grid-cols-2 lg:my-0 gap-5 items-center p-12">
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/HTML5_Badge.svg" alt="" width={50} className="grayscale hover:grayscale-0" />
+                </div>
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/62/CSS3_logo.svg" alt="" width={50} className="grayscale hover:grayscale-0" />
+                </div>
+                <div>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="" width={50} className="grayscale hover:grayscale-0" />
+                </div>
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="" width={50} className="grayscale hover:grayscale-0" />
                 <img src="https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg" alt="" width={50} className="grayscale hover:grayscale-0" />
                 <img src="https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" alt="" width={150} className="grayscale hover:grayscale-0" />
                 <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Mongodb.png" alt="" width={150} className="grayscale hover:grayscale-0" />
             </div>
             <div>
-                <h1 className='text-5xl underline text-center'>My Projects</h1>
+                <h1 className='lg:text-5xl  text-3xl underline text-center'>My Projects</h1>
                 <ProjectsData></ProjectsData>
             </div>
             <Footer />
