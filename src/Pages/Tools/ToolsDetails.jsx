@@ -74,7 +74,7 @@ count is: {count}
                         <p className='lg:text-3xl '>Stock left : {tools.stock - quantity}</p>
 
                         <p className='lg:text-xl my-3'>Total : ${(total.toFixed(2))}</p>
-                        <button className='lg:btn btn-sm rounded btn-secondary mx-2 text-white' onClick={postToDb}>Buy Now</button>
+                        <button className='lg:btn btn-sm btn-secondary rounded lg:btn-secondary mx-2 lg:text-white text-white' onClick={postToDb}>Buy Now</button>
                     </div>
                 </div>
             </div>
