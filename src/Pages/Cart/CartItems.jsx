@@ -37,7 +37,7 @@ const CartItems = () => {
     }
     return (
         <div>
-            <h1 className='text-end text-xl mx-4'>Your Ordered Item : {data?.data.length}</h1>
+            <h1 className='text-end lg:text-xl mx-4'>Your Ordered Item : {data?.data.length}</h1>
             <div>
                 {
                     data?.data.length === 0 && <h1 className='text-xs badge rounded p-3'>Your Cart is empty order some</h1>
@@ -45,7 +45,7 @@ const CartItems = () => {
             </div>
             <div class="mx-auto">
                 <div class="overflow-x-auto">
-                    <table class="table w-full">
+                    <table class="table w-full table-compact">
                         <thead>
                             <tr>
                                 <th>Id</th>

@@ -6,7 +6,7 @@ const Intro = () => {
         <div>
             <div class=" flex flex-col h-screen justify-center items-center">
                 <Bounce left cascade>
-                    <div className="text-7xl p-2">Welcome to EQUIPO</div>
+                    <div className="lg:text-7xl p-2 text-3xl">Welcome to EQUIPO</div>
                 </Bounce>
                 <div className="text-3xl p-2">
                     <Bounce left>

@@ -24,31 +24,29 @@ const Payment = () => {
     const { toolName, userName, totalPrice } = bookingData
     return (
         <div>
-            <div>
-                <div class="hero">
-                    <div class="hero-content flex-col lg:flex-row">
-                        <div class="card flex-shrink-0  shadow-xl bg-base-100">
-                            <div class="card-body">
-                                <div class="card  bg-base-100 shadow-xl">
-                                    <div class="card-body">
-                                        <h2 className='text-xl text-accent'>Hello ,{userName}</h2>
-                                        <h2 class="card-title"> Pay for : <span className='text-orange-500'>{toolName}</span></h2>
-                                        {<p>Please Pay : <span className='text-red-400'>${totalPrice}</span>
-                                        </p>}
-                                    </div>
+            <>
+                <div class="hero flex">
+                    <div class="card shadow-xl bg-base-100">
+                        <div class="card-body lg:p-0 p-12">
+                            <div class="card w bg-base-100 shadow-xl">
+                                <div class="card-body">
+                                    <h2 className='lg:text-xl text-accent'>Hello ,{userName}</h2>
+                                    <h2 class="card-title lg:text-3xl text-xs"> Pay for : <span className='text-orange-500 lg:text-3xl  text-xs'>{toolName}</span></h2>
+                                    {<p>Please Pay : <span className='text-red-400'>${totalPrice}</span>
+                                    </p>}
                                 </div>
                             </div>
-                            <div className='card-body capitalize w-96'>
-                                <Elements stripe={stripePromise}>
-                                    <CheckoutForm bookingData={bookingData} />
-                                </Elements>
-                            </div>
                         </div>
-                        {/* Gateway images */}
-
+                        <div className='card-body capitalize '>
+                            <Elements stripe={stripePromise}>
+                                <CheckoutForm bookingData={bookingData} />
+                            </Elements>
+                        </div>
                     </div>
+                    {/* Gateway images */}
+
                 </div>
-            </div>
+            </>
         </div>
     );
 };

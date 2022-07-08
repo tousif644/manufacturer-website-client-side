@@ -30,7 +30,7 @@ const AllUsers = () => {
         <div>
             <h1>Total users : {data?.data.length}</h1>
             <div class="overflow-x-auto">
-                <table class="table w-full">
+                <table class="table w-full table-compact">
                     <thead>
                         <tr>
                             <th>Id</th>

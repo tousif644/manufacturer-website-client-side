@@ -60,7 +60,7 @@ const AddItem = () => {
     }
     return (
         <div>
-            <h1 className='text-4xl font-bold underline'>Add Item</h1>
+            <h1 className='lg:text-4xl text-2xl text-center font-bold underline'>Add Item</h1>
             <div>
                 <div>
                     <div className="card mx-auto   lg:max-w-lg md:max-w-md sm:max-w-sm    bg-base-100 shadow-xl">

@@ -46,18 +46,18 @@ count is: {count}
     }
     return (
         <div>
-            <p className='text-xl px-2'><Link to="/home">👈 Back to home</Link></p>
-            <h1 className='text-4xl underline font-bold text-center my-2'>Product Details</h1>
+            <p className='lg:text-xl px-2'><Link to="/home">👈 Back to home</Link></p>
+            <h1 className='lg:text-4xl underline font-bold text-center my-2'>Product Details</h1>
             <div class="hero min-h-screen mx-auto ">
                 <div class="hero-content  flex-col lg:flex-row">
                     <img src={tools.image} class="w-8/12 rounded-lg" />
                     <div>
-                        <h1 class="text-5xl font-bold">{tools.name}</h1>
-                        <p class="py-6 text-3xl text-secondary">Price ${tools.price}</p>
+                        <h1 class="lg:text-5xl  text-sm font-bold">{tools.name}</h1>
+                        <p class="py-6 lg:text-3xl text-secondary text-sm">Price ${tools.price}</p>
                         {/* <p>Total : </p> */}
                         <p>
-                            <span className='text-2xl'>Quantity :</span>
-                            <button className='btn btn-square mx-3' onClick={
+                            <span className='lg:text-2xl'>Quantity :</span>
+                            <button className='lg:btn lg:btn-square mx-3 btn-sm' onClick={
                                 () => {
                                     if (quantity > 2) {
                                         setQuantity((quantity) - 2)
@@ -65,16 +65,16 @@ count is: {count}
                                 }}> - </button>
                             {quantity}
 
-                            <button className='btn btn-square mx-3' onClick={() => {
+                            <button className='lg:btn btn-square mx-3' onClick={() => {
                                 if (quantity < 50) {
                                     setQuantity((quantity) + 2)
                                 }
                             }}>+</button>
                         </p>
-                        <p>Stock left : {tools.stock - quantity}</p>
+                        <p className='lg:text-3xl '>Stock left : {tools.stock - quantity}</p>
 
-                        <p className='text-xl my-3'>Total : ${(total.toFixed(2))}</p>
-                        <button className='btn btn-secondary mx-2 text-white' onClick={postToDb}>Buy Now</button>
+                        <p className='lg:text-xl my-3'>Total : ${(total.toFixed(2))}</p>
+                        <button className='lg:btn btn-sm rounded btn-secondary mx-2 text-white' onClick={postToDb}>Buy Now</button>
                     </div>
                 </div>
             </div>

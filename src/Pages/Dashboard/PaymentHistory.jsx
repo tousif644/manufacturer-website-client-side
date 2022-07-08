@@ -35,7 +35,7 @@ const PaymentHistory = () => {
             {/* */}
 
             <div class="overflow-x-auto">
-                <table class="table w-full">
+                <table class="table w-full table-compact">
                     <thead>
                         <tr>
                             <th>Id</th>

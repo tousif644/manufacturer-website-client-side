@@ -8,12 +8,12 @@ const Tool = ({ tools }) => {
     }
     return (
         <div >
-            <div class="card w-4/5 mx-auto bg-base-100 shadow-xl">
+            <div class="card max-w-screen mx-auto bg-base-100 shadow-xl">
                 <figure><img src={image} alt="tools-image" width={300} /></figure>
                 <div class="card-body">
-                    <h2 class="card-title text-md">
+                    <h2 class="card-title lg:text-md text-xs">
                         {name}
-                        <div class="badge badge-secondary text-white">NEW</div>
+                        <div class="badge badge-secondary text-white lg:flex hidden">NEW</div>
                     </h2>
                     <p className=''>Price : <span className='text-secondary font-bold'>{price}</span></p>
                     <div class="card-actions">
