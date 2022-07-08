@@ -24,6 +24,7 @@ import AllOrders from './Pages/Dashboard/AllOrders';
 import Payment from './Pages/Dashboard/Payment';
 import PaymentHistory from './Pages/Dashboard/PaymentHistory';
 import AddItem from './Pages/Dashboard/AddItem';
+import NotFound from './Pages/Misc/NotFound';
 
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
             <AddItem></AddItem>
           </RequireAdmin>}></Route>
         </Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer />
 
