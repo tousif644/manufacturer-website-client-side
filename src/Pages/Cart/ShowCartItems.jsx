@@ -18,7 +18,7 @@ const ShowCartItems = ({ cart, index, refetch, setDeletingItems }) => {
                 <td>${(totalPrice).toFixed(2)}</td>
                 <td>
                     {(cart.price && !cart.paid) && <Link to={`/dashboard/payment/${_id}`} className='btn btn-accent btn-xs text-white mx-2'>Pay</Link>}
-                    {(cart.price && !cart.paid) && <span className='text-blue-400'>paied</span>}
+                    {(cart.price && cart.paid) && <span className='text-orange-500 text-xl capitalize mx-2'>paied</span>}
                     <label onClick={() => setDeletingItems(cart)} for="delete-confirm-modal" class=" btn btn-xs modal-button btn-error text-white">Delete</label></td>
             </tr>
         </>
