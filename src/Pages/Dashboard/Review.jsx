@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 const Review = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data) => {
-        fetch(`http://localhost:5000/reviews`, {
+        fetch(`https://equipo-fullstack-app.herokuapp.com/reviews`, {
             method: "POST",
             headers: {
                 'content-type': "application/json",

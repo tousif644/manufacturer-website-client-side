@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react';
 const ToolsDetailsHook = (serviceId) => {
     const [tools, setTools] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/tools/${serviceId}`)
+        fetch(`https://equipo-fullstack-app.herokuapp.com/tools/${serviceId}`)
             .then(res => res.json())
-        .then(data => setTools(data))
+            .then(data => setTools(data))
     }, [serviceId])
-    
+
     return [tools];
 };
 

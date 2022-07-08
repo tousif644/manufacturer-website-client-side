@@ -8,7 +8,7 @@ import ShowAllOrders from './ShowAllOrders';
 const AllOrders = () => {
     const [deletingItems, setDeletingItems] = useState(null)
     const fetchOrders = () => {
-        return axios.get('http://localhost:5000/cart', {
+        return axios.get('https://equipo-fullstack-app.herokuapp.com/cart', {
             method: "GET",
             headers: {
                 authorization: `Token ${localStorage.getItem('accessToken')}`

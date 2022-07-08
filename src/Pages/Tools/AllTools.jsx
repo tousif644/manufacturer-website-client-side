@@ -6,7 +6,7 @@ import ShowAllTools from './ShowAllTools';
 
 const AllTools = () => {
     // fetching data
-    const { data: tools, isLoading , refetch} = useQuery('tools', () => fetch('http://localhost:5000/tools').then(res => res.json()))
+    const { data: tools, isLoading, refetch } = useQuery('tools', () => fetch('https://equipo-fullstack-app.herokuapp.com/tools').then(res => res.json()))
 
     if (isLoading) {
         return <Loading></Loading>

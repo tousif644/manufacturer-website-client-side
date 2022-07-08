@@ -19,7 +19,7 @@ count is: {count}
 </button> */}
 
     const bookingData = {
-        toolId : tools._id,
+        toolId: tools._id,
         toolName: tools.name,
         userName: user.displayName,
         userEmail: user.email,
@@ -29,7 +29,7 @@ count is: {count}
     }
 
     const postToDb = () => {
-        fetch(`http://localhost:5000/cart`, {
+        fetch(`https://equipo-fullstack-app.herokuapp.com/cart`, {
             method: "POST",
             headers: {
                 'content-type': 'application/json',

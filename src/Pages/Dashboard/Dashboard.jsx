@@ -32,9 +32,6 @@ const Dashboard = () => {
                         {
                             admin && <li><Link to="/dashboard/add-item">Add Tool</Link></li>
                         }
-                        {
-                            admin && <li><Link to="/dashboard/manage-tools">Manage Tools</Link></li>
-                        }
                         <li><Link to="/dashboard/payment-history">Payment History</Link></li>
                     </ul>
 

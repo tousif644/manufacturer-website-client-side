@@ -11,7 +11,7 @@ const stripePromise = loadStripe('pk_test_51LHV3jIBnoUPe5R3c7bnaMMN4UWyxDH5oYhop
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `http://localhost:5000/payment/cart/${id}`;
+    const url = `https://equipo-fullstack-app.herokuapp.com/payment/cart/${id}`;
     const { data: bookingData, isLoading } = useQuery('bookingData', () => fetch(url, {
         method: 'GET',
         headers: {

@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 
 const makeAdmin = (user) => {
     const [admin, setAdmin] = useState(false)
-    const [adminLoading,setAdminLoading] = useState(true)
+    const [adminLoading, setAdminLoading] = useState(true)
     useEffect(() => {
 
         const email = user?.email;
 
         if (email) {
-            fetch(`http://localhost:5000/admin/${email}`, {
+            fetch(`https://equipo-fullstack-app.herokuapp.com/admin/${email}`, {
                 method: "GET",
                 headers: {
                     authorization: `Token ${localStorage.getItem('accessToken')}`
@@ -23,7 +23,7 @@ const makeAdmin = (user) => {
         }
 
     }, [user])
-    return [admin,adminLoading]
+    return [admin, adminLoading]
 }
 
 

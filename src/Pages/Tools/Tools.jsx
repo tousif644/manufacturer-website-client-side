@@ -8,7 +8,7 @@ const Tools = () => {
     const [tools, setTools] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/tools').then(res => res.json()).then(data => setTools(data))
+        fetch('https://equipo-fullstack-app.herokuapp.com/tools').then(res => res.json()).then(data => setTools(data))
     }, [])
     const threeProducts = tools.slice(0, 3);
     return (
@@ -21,7 +21,7 @@ const Tools = () => {
                     threeProducts.map(tool => <Tool key={tool._id} tools={tool}></Tool>)
                 }
 
-                    <h1 className=''><Link to={"/allTools"} className="mx-auto text-xl font-semibold">Show more tools <span className='text-primary'>➡</span></Link></h1>
+                <h1 className=''><Link to={"/allTools"} className="mx-auto text-xl font-semibold">Show more tools <span className='text-primary'>➡</span></Link></h1>
 
             </div>
 

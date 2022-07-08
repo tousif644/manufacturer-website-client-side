@@ -7,7 +7,7 @@ const ShowAllUsers = ({ index, data, refetch }) => {
     const { userEmail, role } = data;
     const [user] = useAuthState(auth);
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/users/admin/${userEmail}`, {
+        fetch(`https://equipo-fullstack-app.herokuapp.com/users/admin/${userEmail}`, {
             method: "PUT",
             headers: {
                 authorization: `Token ${localStorage.getItem("accessToken")}`
@@ -19,7 +19,7 @@ const ShowAllUsers = ({ index, data, refetch }) => {
                 }
             })
             .then(data => {
-           console.log(data);
+                console.log(data);
             })
 
     }

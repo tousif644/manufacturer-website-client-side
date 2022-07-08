@@ -15,7 +15,7 @@ const CheckoutForm = ({ bookingData }) => {
 
     //sending price
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://equipo-fullstack-app.herokuapp.com/create-payment-intent', {
             method: "POST",
             headers: {
                 'content-type': 'application/json',
@@ -83,7 +83,7 @@ const CheckoutForm = ({ bookingData }) => {
                 transactionId: paymentIntent.id
             }
 
-            fetch(`http://localhost:5000/payment/cart/${_id}`, {
+            fetch(`https://equipo-fullstack-app.herokuapp.com/payment/cart/${_id}`, {
                 method: "PATCH",
                 headers: {
                     'content-type': 'application/json',

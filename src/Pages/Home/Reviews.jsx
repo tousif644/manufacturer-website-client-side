@@ -19,7 +19,7 @@ const Reviews = () => {
     const [review, SetReview] = useState([])
 
     useEffect(() => {
-        fetch("http://localhost:5000/reviews", {
+        fetch("https://equipo-fullstack-app.herokuapp.com/reviews", {
             method: "GET",
             headers: {
                 authorization: `Token ${localStorage.getItem('accessToken')}`

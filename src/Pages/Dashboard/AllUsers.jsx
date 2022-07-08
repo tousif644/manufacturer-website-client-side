@@ -6,7 +6,7 @@ import ShowAllUsers from './ShowAllUsers';
 
 const AllUsers = () => {
     const getUsers = () => {
-        return axios.get("http://localhost:5000/users", {
+        return axios.get("https://equipo-fullstack-app.herokuapp.com/users", {
             method: "GET",
             headers: {
                 authorization: `Token ${localStorage.getItem('accessToken')}`

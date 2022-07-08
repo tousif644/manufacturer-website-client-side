@@ -13,7 +13,7 @@ const useToken = (user) => {
         console.log(currentUser);
 
         if (email) {
-            fetch(`http://localhost:5000/users/${email}`, {
+            fetch(`https://equipo-fullstack-app.herokuapp.com/users/${email}`, {
                 method: "PUT",
                 headers: {
                     'content-type': "application/json"

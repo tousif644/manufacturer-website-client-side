@@ -10,7 +10,7 @@ const ShowAllOrders = ({ datas, index, refetch, setDeletingItems }) => {
 
     const navigate = useNavigate();
     const handleDelete = (email) => {
-        fetch(`http://localhost:5000/cart/${email}`, {
+        fetch(`https://equipo-fullstack-app.herokuapp.com/cart/${email}`, {
             method: "DELETE",
             headers: {
                 authorization: `Token ${localStorage.getItem('accessToken')}`

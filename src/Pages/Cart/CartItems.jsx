@@ -15,7 +15,7 @@ const CartItems = () => {
     const [deletingItems, setDeletingItems] = useState(null)
 
     const fetchData = () => {
-        return axios.get(`http://localhost:5000/cart/${user.email}`, {
+        return axios.get(`https://equipo-fullstack-app.herokuapp.com/cart/${user.email}`, {
             method: "GET",
             headers: {
                 'authorization': `Token ${localStorage.getItem('accessToken')}`
