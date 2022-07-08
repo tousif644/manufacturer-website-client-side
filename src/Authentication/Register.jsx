@@ -30,7 +30,7 @@ const Register = () => {
     }
     if (error || gError || updatError) {
         regError = (
-            <p>{error.message || gError.message || updatError.message}</p>
+            <p>{error?.message || gError?.message || updatError?.message}</p>
         )
     }
     if (token) {
