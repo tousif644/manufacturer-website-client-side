@@ -4,7 +4,6 @@ import auth from './../../firebase.init';
 import Loading from '../Pages/Misc/Loading';
 import { Link, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
-import { async } from '@firebase/util';
 import useToken from '../Pages/Hooks/useToken';
 
 const Register = () => {
@@ -15,7 +14,7 @@ const Register = () => {
         loading,
         error,
     ]= useCreateUserWithEmailAndPassword(auth);
-    const [gUser, gError, gLoading, signInWithGoogle] = useSignInWithGoogle(auth);
+    const [signInWithGoogle,gUser, gError, gLoading ] = useSignInWithGoogle(auth);
     const [updateProfile, updating, updatError] = useUpdateProfile(auth);
 
     const [token] = useToken(user || gUser);
