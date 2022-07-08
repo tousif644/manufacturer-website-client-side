@@ -23,6 +23,8 @@ import RequireAdmin from './Authentication/RequireAdmin';
 import AllOrders from './Pages/Dashboard/AllOrders';
 import Payment from './Pages/Dashboard/Payment';
 import PaymentHistory from './Pages/Dashboard/PaymentHistory';
+import AddItem from './Pages/Dashboard/AddItem';
+import ManageTools from './Pages/Dashboard/ManageTools';
 
 
 function App() {
@@ -54,6 +56,12 @@ function App() {
           </RequireAdmin>}></Route>
           <Route path='orders' element={<RequireAdmin>
             <AllOrders></AllOrders>
+          </RequireAdmin>}></Route>
+          <Route path='add-item' element={<RequireAdmin>
+            <AddItem></AddItem>
+          </RequireAdmin>}></Route>
+          <Route path='manage-tools/' element={<RequireAdmin>
+            <ManageTools></ManageTools>
           </RequireAdmin>}></Route>
         </Route>
       </Routes>

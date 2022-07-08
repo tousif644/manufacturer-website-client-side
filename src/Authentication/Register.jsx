@@ -123,7 +123,7 @@ const Register = () => {
                         <input
                             className="btn btn-primary w-full max-w-xs my-3 capitalize text-white"
                             type="submit"
-                            value="Login"
+                            value="Register"
                         />
                     </form>
                     <p>{regError}</p>

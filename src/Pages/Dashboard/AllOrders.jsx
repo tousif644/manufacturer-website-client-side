@@ -18,7 +18,6 @@ const AllOrders = () => {
 
     const { isLoading, data, refetch } = useQuery('orders', fetchOrders);
 
-    console.log(data?.data)
     if (isLoading) {
         return <Loading></Loading>
     }

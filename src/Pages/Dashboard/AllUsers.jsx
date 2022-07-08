@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React from 'react';
 import { useQuery } from 'react-query';
+import Loading from '../Misc/Loading';
 import ShowAllUsers from './ShowAllUsers';
 
 const AllUsers = () => {
@@ -22,6 +23,9 @@ const AllUsers = () => {
     }
 
     const { isLoading, data, refetch } = useQuery('data-heros', getUsers);
+    if (isLoading) {
+        <Loading></Loading>
+    }
     return (
         <div>
             <h1>Total users : {data?.data.length}</h1>

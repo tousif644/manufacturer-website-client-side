@@ -38,7 +38,7 @@ const Payment = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className='card-body capitalize'>
+                            <div className='card-body capitalize w-96'>
                                 <Elements stripe={stripePromise}>
                                     <CheckoutForm bookingData={bookingData} />
                                 </Elements>
